@@ -89,5 +89,9 @@ def upload_image():
     except Exception as e:
         return Response(str(e), status=500)
 
+@app.route('/status', methods=['GET'])
+def status():
+    return Response("Server is up and running!", status=200, mimetype='text/plain')
+    
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
