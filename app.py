@@ -89,7 +89,7 @@ def upload_image():
     except Exception as e:
         return Response(str(e), status=500)
 
-@app.route('/status')
+@app.route('/status', methods=['GET'])
 def status():
     return jsonify({"status": "Server is running"}), 200
 
